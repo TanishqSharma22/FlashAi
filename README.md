@@ -6,3 +6,5 @@
 
 ![image alt](https://github.com/TanishqSharma22/FlashAi/blob/3735dc7b374c2bb3833cdf216c6b34dad16de6da/Screenshot%202025-08-10%20010238.png)
 
+![image alt](https://github.com/TanishqSharma22/FlashAi/blob/418251843b225476100579d5b5929ac47e32e8b3/Screenshot%202025-08-10%20011346.png)
+
