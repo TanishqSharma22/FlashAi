@@ -1,7 +1,7 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import { Menu, X } from 'lucide-react'
-import Sidebar from '../components/SideBar'
+import Sidebar from '../components/Sidebar'
 import { SignIn, useUser } from '@clerk/clerk-react'
 import {useNavigate, Outlet} from 'react-router-dom'
 import { useState } from 'react'
