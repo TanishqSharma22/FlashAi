@@ -178,16 +178,15 @@ export const removeBackgroundImage = async (req, res) => {
 
         const { secure_url } = await cloudinary.uploader.upload(image.path, {
             transformation: [
-                {
-                    effect: 'background_removal',
-                    background_removal: 'remove_the_background'
-                }
+                { effect: 'background_removal' }
             ]
         });
 
         // Save the image URL to the database.
         await sql`INSERT INTO creations (user_id, prompt, content, type) 
                      VALUES (${userId}, 'Remove background from image', ${secure_url}, 'image')`;
+
+        fs.unlinkSync(image.path);
 
         res.json({ success: true, content: secure_url });
 
@@ -221,6 +220,8 @@ export const removeImageObject = async (req, res) => {
 
         await sql`INSERT INTO creations (user_id, prompt, content, type) 
                      VALUES (${userId}, ${`Removed ${object} from image`}, ${imageUrl}, 'image')`;
+
+        fs.unlinkSync(image.path);
 
         res.json({ success: true, content: imageUrl });
 
@@ -268,6 +269,8 @@ export const resumeReview = async (req, res) => {
 
         await sql`INSERT INTO creations (user_id, prompt, content, type) 
                      VALUES (${userId}, 'Review the uploaded resume', ${content}, 'resume-review')`;
+
+        fs.unlinkSync(resume.path);
 
         res.json({ success: true, content });
 

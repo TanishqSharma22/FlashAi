@@ -74,7 +74,8 @@ const Dashboard = () => {
         (
           <div className='flex justify-center item-center h-3/4'>
             <div className='animated-spin rounded-full h-11 w-11 border-3
-            border-purple-500 border-t-transparenr'></div>
+            border-purple-500 border-t-transparent'>
+            </div>
           </div>
 
         ) :(

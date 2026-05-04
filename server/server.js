@@ -4,11 +4,15 @@ import 'dotenv/config';
 import { clerkMiddleware, requireAuth } from '@clerk/express'
 import aiRouter from './routes/aiRoutes.js';
 import connectCloudinary from './configs/cloudinary.js';
-import userRouter from './routes/userROUTES.js';
+import userRouter from './routes/userRoutes.js';
 
 const app = express()
 
-await connectCloudinary()
+try {
+  await connectCloudinary()
+} catch (error) {
+  console.error('Cloudinary connection failed:', error.message)
+}
 
 app.use(cors())
 app.use(express.json())

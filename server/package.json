@@ -4,8 +4,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "build": "esbuild server.js --bundle --platform=node --target=node20 --outfile=dist/server.js --format=esm --external:openai --external:@neondatabase/serverless --external:cloudinary --external:@clerk/express",
     "server": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
